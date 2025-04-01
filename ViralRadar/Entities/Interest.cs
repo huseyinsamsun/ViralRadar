@@ -1,4 +1,6 @@
 ﻿using System;
+using ViralRadar.Entities;
+
 namespace ViralRadar.Models
 {
 	public class Interest
@@ -6,6 +8,7 @@ namespace ViralRadar.Models
         public int Id { get; set; }
         public string Name { get; set; }               // makeup, storytime, vs.
         public ICollection<TrendContentInterest> TrendContentInterests { get; set; }
+        public ICollection<UserInterest> UserInterests { get; set; }
     }
 }
 
