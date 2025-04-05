@@ -1,35 +1,20 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using ViralRadar.Entities;
-using ViralRadar.Models;
+using Microsoft.Extensions.Configuration;
+using ViralRadar.Domain.Entities;
 
-namespace ViralRadar.Data
+namespace ViralRadar.Infrastructure.Persistence.AppDbContext
 {
 	public class ApplicationDbContext:DbContext
 	{
-
-        private readonly IConfiguration _config;
-        public ApplicationDbContext(IConfiguration config)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+      : base(options)
         {
-            _config = config;
-        }
-
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,IConfiguration config):base(options)
-        {
-            _config = config;
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
-            }
         }
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<UserInterest> UserInterests{ get; set; }
+        public DbSet<UserInterest> UserInterests { get; set; }
 
         public DbSet<Interest> Interests { get; set; }
 
@@ -41,7 +26,7 @@ namespace ViralRadar.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder); 
 
             // UserInterest M:N
             modelBuilder.Entity<UserInterest>()
@@ -74,7 +59,7 @@ namespace ViralRadar.Data
             // UserSavedContent 1:N
             modelBuilder.Entity<UserSavedContent>()
                 .HasOne(usc => usc.User)
-                .WithMany(u => u.SavedContents)
+                .WithMany(u => u.UserSavedContents)
                 .HasForeignKey(usc => usc.UserId);
 
             modelBuilder.Entity<UserSavedContent>()
@@ -82,7 +67,6 @@ namespace ViralRadar.Data
                 .WithMany()
                 .HasForeignKey(usc => usc.TrendContentId);
         }
-
 
     }
 }
