@@ -11,16 +11,19 @@
     <None Remove="Persistence\" />
     <None Remove="Persistence\AppDbContext\" />
     <None Remove="Extensions\" />
+    <None Remove="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Persistence\" />
     <Folder Include="Persistence\AppDbContext\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.20" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViralRadar.Domain\ViralRadar.Domain.csproj" />
+    <ProjectReference Include="..\ViralRadar.Core\ViralRadar.Core.csproj" />
   </ItemGroup>
 </Project>
