@@ -10,10 +10,12 @@
     <None Remove="Interfaces\" />
     <None Remove="Common\" />
     <None Remove="Messaging\" />
+    <None Remove="Responses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Common\" />
     <Folder Include="Messaging\" />
+    <Folder Include="Responses\" />
   </ItemGroup>
 </Project>
