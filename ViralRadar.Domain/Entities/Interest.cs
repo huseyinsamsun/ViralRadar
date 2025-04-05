@@ -1,11 +1,10 @@
 ﻿using System;
-using ViralRadar.Entities;
+using ViralRadar.Domain.Common;
 
-namespace ViralRadar.Models
+namespace ViralRadar.Domain.Entities
 {
-	public class Interest
+	public class Interest:Entity<long>
 	{
-        public int Id { get; set; }
         public string Name { get; set; }               // makeup, storytime, vs.
         public ICollection<TrendContentInterest> TrendContentInterests { get; set; }
         public ICollection<UserInterest> UserInterests { get; set; }

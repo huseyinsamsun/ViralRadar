@@ -1,9 +1,11 @@
 ﻿using System;
-namespace ViralRadar.Models
+using ViralRadar.Domain.Common;
+
+namespace ViralRadar.Domain.Entities
 {
-	public class TrendContent
+	public class TrendContent:Entity<long>
 	{
-        public int Id { get; set; }
+        
         public string Platform { get; set; }           // TikTok, Instagram
         public string Hashtag { get; set; }
         public string Sound { get; set; }
@@ -13,7 +15,6 @@ namespace ViralRadar.Models
         public int ViralScore { get; set; }
 
         public ICollection<TrendContentInterest> TrendContentInterests { get; set; }
-
     }
 }
 

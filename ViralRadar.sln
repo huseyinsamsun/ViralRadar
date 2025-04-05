@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar", "ViralRadar\ViralRadar.csproj", "{82418244-7F86-4E2E-899A-BBCD65940E5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar.WebApi", "ViralRadar\ViralRadar.WebApi.csproj", "{82418244-7F86-4E2E-899A-BBCD65940E5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar.Infrastructure", "ViralRadar.Infrastructure\ViralRadar.Infrastructure.csproj", "{9E46B4B5-BA9B-433B-855B-527525BCB25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar.Domain", "ViralRadar.Domain\ViralRadar.Domain.csproj", "{DFF4878C-278C-4F32-B1B5-EAB5C756CB7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar.Core", "ViralRadar.Core\ViralRadar.Core.csproj", "{082F2320-6F07-4956-A6B6-93972FFE225D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViralRadar.Application", "ViralRadar.Application\ViralRadar.Application.csproj", "{184A23A8-1D8F-4317-95BA-6D291866E48A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{82418244-7F86-4E2E-899A-BBCD65940E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82418244-7F86-4E2E-899A-BBCD65940E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82418244-7F86-4E2E-899A-BBCD65940E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E46B4B5-BA9B-433B-855B-527525BCB25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E46B4B5-BA9B-433B-855B-527525BCB25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E46B4B5-BA9B-433B-855B-527525BCB25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E46B4B5-BA9B-433B-855B-527525BCB25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF4878C-278C-4F32-B1B5-EAB5C756CB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF4878C-278C-4F32-B1B5-EAB5C756CB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF4878C-278C-4F32-B1B5-EAB5C756CB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF4878C-278C-4F32-B1B5-EAB5C756CB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082F2320-6F07-4956-A6B6-93972FFE225D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082F2320-6F07-4956-A6B6-93972FFE225D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082F2320-6F07-4956-A6B6-93972FFE225D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082F2320-6F07-4956-A6B6-93972FFE225D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184A23A8-1D8F-4317-95BA-6D291866E48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184A23A8-1D8F-4317-95BA-6D291866E48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184A23A8-1D8F-4317-95BA-6D291866E48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184A23A8-1D8F-4317-95BA-6D291866E48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
