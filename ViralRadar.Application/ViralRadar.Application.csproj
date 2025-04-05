@@ -7,13 +7,32 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ViralRadar.Core\ViralRadar.Core.csproj" />
     <ProjectReference Include="..\ViralRadar.Domain\ViralRadar.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="TrendContents\" />
+    <None Remove="TrendContents\Commands\" />
+    <None Remove="TrendContents\Dtos\" />
+    <None Remove="TrendContents\Mappings\" />
+    <None Remove="Common\" />
+    <None Remove="Common\Message\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TrendContents\" />
+    <Folder Include="TrendContents\Commands\" />
+    <Folder Include="TrendContents\Dtos\" />
+    <Folder Include="TrendContents\Mappings\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Message\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.3.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
   </ItemGroup>
 </Project>
