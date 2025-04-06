@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ViralRadar.Application.Interfaces;
 using ViralRadar.Infrastructure.Persistence.AppDbContext;
+using ViralRadar.Infrastructure.Repositories;
 
 namespace ViralRadar.Infrastructure.Extensions
 {
@@ -10,12 +12,12 @@ namespace ViralRadar.Infrastructure.Extensions
 	{
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
-
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                    sql => sql.MigrationsAssembly("ViralRadar.Infrastructure")));
 
-   
+            services.AddScoped<ITrendContentRepository, TrendContentRepository>();
+
             return services;
         }
 

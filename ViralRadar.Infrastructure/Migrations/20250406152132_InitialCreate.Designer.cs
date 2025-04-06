@@ -12,7 +12,7 @@ using ViralRadar.Infrastructure.Persistence.AppDbContext;
 namespace ViralRadar.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250405095634_InitialCreate")]
+    [Migration("20250406152132_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -27,11 +27,9 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.Interest", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -53,11 +51,9 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.TrendContent", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -100,17 +96,17 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.TrendContentInterest", b =>
                 {
-                    b.Property<long>("TrendContentId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("TrendContentId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<long>("InterestId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("InterestId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -127,11 +123,9 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("BanReason")
                         .HasColumnType("nvarchar(max)");
@@ -190,17 +184,17 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.UserInterest", b =>
                 {
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<long>("InterestId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("InterestId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -217,11 +211,9 @@ namespace ViralRadar.Infrastructure.Migrations
 
             modelBuilder.Entity("ViralRadar.Domain.Entities.UserSavedContent", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -229,14 +221,14 @@ namespace ViralRadar.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<long>("TrendContentId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("TrendContentId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

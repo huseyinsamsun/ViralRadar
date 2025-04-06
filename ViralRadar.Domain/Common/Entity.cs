@@ -4,22 +4,17 @@ using System.Security.Cryptography;
 
 namespace ViralRadar.Domain.Common
 {
-    public abstract class Entity<TId>:IEntity<TId> where TId:struct
+    public abstract class Entity<TId>:IEntity<Guid>
 	{
         [Key]
-        public TId Id { get; protected set; }
+        public Guid Id { get; protected set; } = Guid.NewGuid();
         public DateTime CreatedDate { get; protected set; } = DateTime.UtcNow;
         public DateTime? UpdatedDate { get;set; }
         public bool IsDeleted { get;set; }
 
-
-        protected Entity()
+        public Entity()
         {
 
-        }
-        protected Entity(TId id)
-        {
-            Id = id;
         }
 
     }
