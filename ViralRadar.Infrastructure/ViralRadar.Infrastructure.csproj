@@ -25,5 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ViralRadar.Domain\ViralRadar.Domain.csproj" />
     <ProjectReference Include="..\ViralRadar.Core\ViralRadar.Core.csproj" />
+    <ProjectReference Include="..\ViralRadar.Application\ViralRadar.Application.csproj" />
   </ItemGroup>
 </Project>

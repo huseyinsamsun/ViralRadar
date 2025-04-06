@@ -3,7 +3,7 @@ namespace ViralRadar.Application.TrendContents.Dtos
 {
 	public class UpdateTrendContentDto
 	{
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public string Platform { get; set; }
         public string Hashtag { get; set; }
         public string Sound { get; set; }

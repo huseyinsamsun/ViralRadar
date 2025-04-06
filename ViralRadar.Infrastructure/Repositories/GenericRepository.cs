@@ -30,17 +30,20 @@ namespace ViralRadar.Infrastructure.Repositories
 
         public virtual async Task AddAsync(T entity)
         {
-            await _dbSet.AddAsync(entity);
+             await _dbSet.AddAsync(entity);
+             await  _context.SaveChangesAsync();
         }
 
         public virtual async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbSet.AddRangeAsync(entities);
+            await  _context.SaveChangesAsync();
         }
 
         public virtual void Remove(T entity)
         {
-            _dbSet.Remove(entity);
+            _dbSet.Remove(entity); 
+            _context.SaveChangesAsync();
         }
 
         public virtual void RemoveRange(IEnumerable<T> entities)

@@ -3,7 +3,7 @@ using ViralRadar.Domain.Common;
 
 namespace ViralRadar.Domain.Entities
 {
-	public class TrendContent:Entity<long>
+	public class TrendContent:Entity<Guid>
 	{
         
         public string Platform { get; set; }           // TikTok, Instagram

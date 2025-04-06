@@ -12,6 +12,7 @@ namespace ViralRadar.Application.TrendContents.Mappings
 		{
 			CreateMap<CreateTrendContentCommand, TrendContent>().ReverseMap();
 			CreateMap<TrendContent, TrendContentDto>().ReverseMap();
+			CreateMap<CreateTrendContentResponse, TrendContent>().ReverseMap();
 
 
 		}
