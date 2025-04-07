@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using ViralRadar.Application.TrendContents.Commands;
+using ViralRadar.Application.TrendContents.Queries.GetTrendContentById;
 using ViralRadar.Core.Common.Responses;
     
 namespace ViralRadar.WebApi.Controllers
@@ -22,6 +23,22 @@ namespace ViralRadar.WebApi.Controllers
                 return BadRequest(response.Errors);
             }
           
+        }
+
+       [HttpGet("{id}")]
+        public async Task<IActionResult> GetTrendContentById([FromRoute] Guid id)
+        {
+            BaseResponse<TrendContentByIdDto> response = await Mediator.Send(new GetTrendContentByIdQuery() { Id = id });
+            if (response.Success)
+            {
+                return Ok(response);
+                
+            }
+            else
+            {
+                return BadRequest(response.Message);
+            }
+            
         }
     }
 }

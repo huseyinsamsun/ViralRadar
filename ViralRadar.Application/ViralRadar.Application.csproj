@@ -20,7 +20,7 @@
     <None Remove="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TrendContents\" />
+    <Folder Include="Interest\" />
     <Folder Include="TrendContents\Commands\" />
     <Folder Include="TrendContents\Dtos\" />
     <Folder Include="TrendContents\Mappings\" />
