@@ -17,6 +17,7 @@ namespace ViralRadar.Infrastructure.Extensions
                     sql => sql.MigrationsAssembly("ViralRadar.Infrastructure")));
 
             services.AddScoped<ITrendContentRepository, TrendContentRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
